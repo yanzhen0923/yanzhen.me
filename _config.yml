@@ -3,11 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
+avatar: http://7xq8cy.com1.z0.glb.clouddn.com/Kirov.png
 title: YZ
 subtitle:
 description:
 author: Yan Zhen
-language:
+language: en
 timezone:
 
 # URL
@@ -71,3 +72,6 @@ deploy:
   type: git
   repo: https://github.com/yanzhen0923/yanzhen0923.github.io.git
   branch: master
+
+
+baidu_analytics: 64f7c921f0f39633362e8f89dd753398
