@@ -175,7 +175,7 @@ mathjax:
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+#baidu_analytics: 64f7c921f0f39633362e8f89dd753398
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -234,7 +234,7 @@ leancloud_visitors:
 
 
 # Tencent analytics ID
-# tencent_analytics:
+tencent_analytics: 55299572
 
 
 

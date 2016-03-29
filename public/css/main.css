@@ -501,7 +501,7 @@ pre,
   margin: 20px 0;
   padding: 15px;
   overflow: auto;
-  font-size: 15px;
+  font-size: 14px;
   color: #ccc;
   line-height: 1.6;
 }
@@ -511,7 +511,7 @@ pre,
 }
 pre,
 code {
-  font-family: "Input Mono", "PT Mono", Consolas, Monaco, Menlo, monospace;
+  font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 }
 code {
   word-break: break-all;
@@ -1545,7 +1545,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #66aaf1;
+  background: #db79c9;
 }
 .sidebar-nav {
   margin: 0 0 20px;

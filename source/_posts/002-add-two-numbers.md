@@ -13,7 +13,7 @@ The two lists might in different lengths. Do not move any step further if a list
 Remember the last carry, a new node must be created if the last carry is non-zero.
 <!-- more -->
 ## Solution
-{% codeblock lang:java %}
+{% codeblock lang:java line_number:false %}
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -23,43 +23,43 @@ Remember the last carry, a new node must be created if the last carry is non-zer
  * }
  */
 public class Solution {
-	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-		ListNode ans = new ListNode(0); ListNode pointer;
-        pointer = ans;
-        int carry = 0;int tmp = 0;int cur = 0;
-
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode ans = new ListNode(0); ListNode pointer;
+        pointer = ans; int carry = 0; int tmp = 0; int cur = 0;
+        
         if(l1 == null && l2 == null)
-        	return null;
+            return null;
         
         while(l1 != null || l2 != null){
-        		tmp = 0;
-        		//tmp result
-        		if(l1 != null){
-        			tmp += l1.val;
-        			l1 = l1.next;
-        		}
+                tmp = 0;
+                //tmp result
+                if(l1 != null){
+                    tmp += l1.val;
+                    l1 = l1.next;
+                }
+                if(l2 != null){
+                    tmp += l2.val;
+                    l2 = l2.next;
+                }
+                tmp += carry;
+                
+                //carry for next digit
+                carry = tmp / 10;
+    
+                //current digit
+                cur = tmp % 10;
+                
+                //set node value and link
+                //then move to the next
+                pointer.next = new ListNode(cur);
 
-        		if(l2 != null){
-        			tmp += l2.val;
-        			l2 = l2.next;
-        		}
-
-        		tmp += carry;
-        		
-        		//carry for next digit
-        		carry = tmp / 10;
-
-        		//current digit
-        		cur = tmp % 10;
-
-        		//set node value and link
-        		//then move to the next
-        		pointer.next = new ListNode(cur);
-        		pointer = pointer.next;
+                pointer = pointer.next;
         }
+        
         if(carry != 0){
-        	pointer.next = new ListNode(carry);
+            pointer.next = new ListNode(carry);
         }
+        
         return ans.next;
     }
 }

@@ -5,7 +5,7 @@ tags: leetcode
 ---
 ## Solution
 
-{% codeblock lang:java %}
+{% codeblock lang:java line_number:false %}
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
 
@@ -16,7 +16,7 @@ public class Solution {
             return 1;
 
         //initialize params
-        int header = 0; int footer = header + 1; final int DUMMYINT = -1;
+        int header = 0; int footer = header + 1; final int DUMMYINT = -1;//vaule -1 for debugging
         int len = s.length(); int maxlen = DUMMYINT; //maxlen for maximal length
 
         //a set for storing intermediate none-duplicate char sets
@@ -54,7 +54,6 @@ public class Solution {
                 //move header to the right by 1
                 set.remove ( s.charAt ( header ) );
                 ++ header;
-
                 //in case this right header was not added before
                 set.add ( s.charAt ( header ) );
 
@@ -69,4 +68,5 @@ public class Solution {
 
         return maxlen;
     }
+}
 {% endcodeblock %}
