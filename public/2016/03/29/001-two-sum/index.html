@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, i.e., target - nums[i]. The total">
+<meta name="description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The to">
 <meta property="og:type" content="article">
 <meta property="og:title" content="001-Two-Sum">
 <meta property="og:url" content="http://yanzhen.me/2016/03/29/001-two-sum/index.html">
 <meta property="og:site_name" content="YZ">
-<meta property="og:description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, i.e., target - nums[i]. The total">
-<meta property="og:updated_time" content="2016-03-29T14:54:49.115Z">
+<meta property="og:description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The to">
+<meta property="og:updated_time" content="2016-03-30T12:56:28.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="001-Two-Sum">
-<meta name="twitter:description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, i.e., target - nums[i]. The total">
+<meta name="twitter:description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The to">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> 001-Two-Sum | YZ </title>
+  <title> 001-Two-Sum | YZ </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -97,7 +97,7 @@
 
 
 
-  <script type="text/javascript">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
     (function() {
       var hm = document.createElement("script");
       hm.src = "//tajs.qq.com/stats?sId=55299572";
@@ -262,7 +262,7 @@
       
 
       
-        <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><p>Traverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, i.e., target - nums[i]. The total complexity is O (N * log(N)).</p>
+        <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><p>Traverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The total complexity is $O(Nlog(N))$.</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        </span><br><span class="line">        Map&lt;Integer, Integer&gt; m = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++ i)&#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = target - nums[i];</span><br><span class="line">            <span class="keyword">if</span>(m.containsKey(tmp))&#123;</span><br><span class="line">                <span class="keyword">int</span> res = m.get(tmp);</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, res&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                m.put(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -708,6 +708,46 @@
   
   
   
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
 
   
 

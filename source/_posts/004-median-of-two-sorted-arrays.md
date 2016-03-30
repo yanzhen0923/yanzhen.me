@@ -5,12 +5,12 @@ tags: leetcode
 ---
 ## Basic ideas
 ### Find the median
-This problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say m and n are the lengths of the two arrays respectively. Then, if m + n is odd, find the ((m + n) / 2 + 1)th smallest element as the median. If m + n is even, then find the ((m + n) / 2)th and the ((m + n) / 2 + 1)th smallest element, then count the average as the median.
+This problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say $m$ and $n$ are the lengths of the two arrays respectively. Then, if $m + n$ is odd, find the $ (\frac{m + n}{2} + 1)$th smallest element as the median. If $m + n$ is even, then find the $(\frac{m + n}{2})$th and the $(\frac{m + n}{2} + 1)$th smallest element, then count the average as the median.
 
 ### Find the k-th smallest element
-Using a divide-and-conquer style could reach a complexity of only O(logk).
-If there are two arrays, arr1 and arr2, then compare the values of arr1[k/2] and arr2[k/2]. 
-If arr1[k/2] > arr2[k/2], this means all the elements in arr2 before arr2[k/2] must be smaller than the k-th smallest element, so just simply discard those elements. Then, since k/2 elements are dicarded, the problem becomes find the k -  k/2 smallest number. Vice versa. Keep recursion unitl k == 1 or k is larger than the size of a certain array.
+Using a divide-and-conquer style could reach a complexity of only $O(logK)$.
+If there are two arrays, $arr1$ and $arr2$, then compare the values of $arr1[\frac{k}{2}]$ and $arr2[\frac{k}{2}]$. 
+If $arr1[\frac{k}{2}]$ > $arr2[\frac{k}{2}]$, this means all the elements in $arr2$ before $arr2[\frac{k}{2}]$ must be smaller than the k-th smallest element, so just simply discard those elements. Then, since $\frac{k}{2}$ elements are dicarded, the problem becomes find the $ k - \frac{k}{2}$ smallest number. Vice versa. Keep recursion unitl $k == 1$ or the beginning index is larger than the size of the assigned array.
 <!-- more -->
 ## Solution
 {% codeblock lang:java line_number:false %}

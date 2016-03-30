@@ -4,7 +4,7 @@ date: 2016-03-29 04:06:04
 tags: leetcode
 ---
 ## Basic ideas
-Traverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, i.e., target - nums[i]. The total complexity is O (N * log(N)).
+Traverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The total complexity is $O(Nlog(N))$.
 
 ## Solution
 {% codeblock lang:java line_number:false %}

@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="Basic ideasFind the medianThis problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say m and n are the lengths of the two arrays respectively. Then, if m + n">
+<meta name="description" content="Basic ideasFind the medianThis problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say $m$ and $n$ are the lengths of the two arrays respectively. Then, if $">
 <meta property="og:type" content="article">
 <meta property="og:title" content="004-Median-of-Two-Sorted-Arrays">
 <meta property="og:url" content="http://yanzhen.me/2016/03/29/004-median-of-two-sorted-arrays/index.html">
 <meta property="og:site_name" content="YZ">
-<meta property="og:description" content="Basic ideasFind the medianThis problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say m and n are the lengths of the two arrays respectively. Then, if m + n">
-<meta property="og:updated_time" content="2016-03-29T14:55:21.887Z">
+<meta property="og:description" content="Basic ideasFind the medianThis problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say $m$ and $n$ are the lengths of the two arrays respectively. Then, if $">
+<meta property="og:updated_time" content="2016-03-30T12:54:35.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="004-Median-of-Two-Sorted-Arrays">
-<meta name="twitter:description" content="Basic ideasFind the medianThis problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say m and n are the lengths of the two arrays respectively. Then, if m + n">
+<meta name="twitter:description" content="Basic ideasFind the medianThis problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say $m$ and $n$ are the lengths of the two arrays respectively. Then, if $">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> 004-Median-of-Two-Sorted-Arrays | YZ </title>
+  <title> 004-Median-of-Two-Sorted-Arrays | YZ </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -97,7 +97,7 @@
 
 
 
-  <script type="text/javascript">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
     (function() {
       var hm = document.createElement("script");
       hm.src = "//tajs.qq.com/stats?sId=55299572";
@@ -262,8 +262,8 @@
       
 
       
-        <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><h3 id="Find-the-median"><a href="#Find-the-median" class="headerlink" title="Find the median"></a>Find the median</h3><p>This problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say m and n are the lengths of the two arrays respectively. Then, if m + n is odd, find the ((m + n) / 2 + 1)th smallest element as the median. If m + n is even, then find the ((m + n) / 2)th and the ((m + n) / 2 + 1)th smallest element, then count the average as the median.</p>
-<h3 id="Find-the-k-th-smallest-element"><a href="#Find-the-k-th-smallest-element" class="headerlink" title="Find the k-th smallest element"></a>Find the k-th smallest element</h3><p>Using a divide-and-conquer style could reach a complexity of only O(logk).<br>If there are two arrays, arr1 and arr2, then compare the values of arr1[k/2] and arr2[k/2].<br>If arr1[k/2] &gt; arr2[k/2], this means all the elements in arr2 before arr2[k/2] must be smaller than the k-th smallest element, so just simply discard those elements. Then, since k/2 elements are dicarded, the problem becomes find the k -  k/2 smallest number. Vice versa. Keep recursion unitl k == 1 or k is larger than the size of a certain array.<br><a id="more"></a></p>
+        <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><h3 id="Find-the-median"><a href="#Find-the-median" class="headerlink" title="Find the median"></a>Find the median</h3><p>This problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say $m$ and $n$ are the lengths of the two arrays respectively. Then, if $m + n$ is odd, find the $ (\frac{m + n}{2} + 1)$th smallest element as the median. If $m + n$ is even, then find the $(\frac{m + n}{2})$th and the $(\frac{m + n}{2} + 1)$th smallest element, then count the average as the median.</p>
+<h3 id="Find-the-k-th-smallest-element"><a href="#Find-the-k-th-smallest-element" class="headerlink" title="Find the k-th smallest element"></a>Find the k-th smallest element</h3><p>Using a divide-and-conquer style could reach a complexity of only $O(logK)$.<br>If there are two arrays, $arr1$ and $arr2$, then compare the values of $arr1[\frac{k}{2}]$ and $arr2[\frac{k}{2}]$.<br>If $arr1[\frac{k}{2}]$ &gt; $arr2[\frac{k}{2}]$, this means all the elements in $arr2$ before $arr2[\frac{k}{2}]$ must be smaller than the k-th smallest element, so just simply discard those elements. Then, since $\frac{k}{2}$ elements are dicarded, the problem becomes find the $ k - \frac{k}{2}$ smallest number. Vice versa. Keep recursion unitl $k == 1$ or the beginning index is larger than the size of the assigned array.<br><a id="more"></a></p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> len = nums1.length + nums2.length;</span><br><span class="line">        <span class="keyword">if</span>((len &amp; <span class="number">1</span> ) == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> findkth ( nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, (len &gt;&gt; <span class="number">1</span>) + <span class="number">1</span> ) / <span class="number">1.0</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> (findkth ( nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, (len &gt;&gt; <span class="number">1</span>) + <span class="number">1</span>) +</span><br><span class="line">                    findkth ( nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, len &gt;&gt; <span class="number">1</span> )) / <span class="number">2.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findkth</span><span class="params">(<span class="keyword">int</span>[] arr1, <span class="keyword">int</span> arr1Start, <span class="keyword">int</span>[] arr2, <span class="keyword">int</span> arr2Start, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(arr1Start &gt;= arr1.length)</span><br><span class="line">            <span class="keyword">return</span> arr2[arr2Start + k - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(arr2Start &gt;= arr2.length)</span><br><span class="line">            <span class="keyword">return</span> arr1[arr1Start + k - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(k == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> Math.min ( arr1[arr1Start], arr2[arr2Start] );</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> arr1Index = arr1Start + (k &gt;&gt; <span class="number">1</span>) - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> arr2Index = arr2Start + (k &gt;&gt; <span class="number">1</span>) - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> arr1Value = arr1Index &gt;= arr1.length ? Integer.MAX_VALUE : arr1[arr1Index];</span><br><span class="line">        <span class="keyword">int</span> arr2Value = arr2Index &gt;= arr2.length ? Integer.MAX_VALUE : arr2[arr2Index];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(arr1Value &gt; arr2Value)&#123;</span><br><span class="line">            <span class="keyword">return</span> findkth ( arr1, arr1Start, arr2, arr2Start + (k &gt;&gt; <span class="number">1</span>), k - (k &gt;&gt; <span class="number">1</span>));</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> findkth ( arr1, arr1Start + (k &gt;&gt; <span class="number">1</span>), arr2, arr2Start,  k - (k &gt;&gt; <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -705,6 +705,46 @@
   
   
   
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
 
   
 

@@ -3,7 +3,7 @@ title: 002-Add-Two-Numbers
 date: 2016-03-29 05:25:18
 tags: leetcode
 ---
-## Basic Ideas
+## Basic ideas
 The problem is quite clear but with several tricks. Basicly just add the digits one by one and count in the carries, then move to the next digit by moving the pointer until the end.
 ### Trick 1
 Need to initialize a pointer at the very beginning, then assign a random value to it. Upon returning, return pointer.next instead of itself.
