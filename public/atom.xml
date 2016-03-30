@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yanzhen.me/"/>
-  <updated>2016-03-30T13:48:02.610Z</updated>
+  <updated>2016-03-30T16:12:49.086Z</updated>
   <id>http://yanzhen.me/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>006-ZigZag-Conversion</title>
+    <link href="http://yanzhen.me/2016/03/31/006-zigzag-conversion/"/>
+    <id>http://yanzhen.me/2016/03/31/006-zigzag-conversion/</id>
+    <published>2016-03-30T16:02:19.000Z</published>
+    <updated>2016-03-30T16:12:49.086Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Basic-ideas&quot;&gt;&lt;a href=&quot;#Basic-ideas&quot; class=&quot;headerlink&quot; title=&quot;Basic ideas&quot;&gt;&lt;/a&gt;Basic ideas&lt;/h2&gt;&lt;p&gt;A boring problem finding some regulations. The step length is $2numRows - 2$. The characters in the first row and the last row jumps regularly by the step length. For the rest rows, the index jumps by 2 different steps, $step1 = 2(numRows - i - 1)$ and $step2 = step - step1$ respectively. Set a flag to switch to the other length of step in the next jump.&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Solution&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String s, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; numRows)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(s.length() == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; || numRows == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; s;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        StringBuilder str = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StringBuilder();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; step = (numRows &amp;lt;&amp;lt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) - &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//first row&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; s.length(); i += step)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            str.append(s.charAt(i));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//middle rows&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt; numRows - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; ++ i)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = i; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; flag = &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; step1 = (numRows - i - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &amp;lt;&amp;lt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; step2 = step - step1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (j &amp;lt; s.length())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                str.append(s.charAt(j));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(flag)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    j += step1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    j += step2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                flag ^= &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//last row&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = numRows - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt; s.length(); i += step)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            str.append(s.charAt(i));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.toString();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Basic-ideas&quot;&gt;&lt;a href=&quot;#Basic-ideas&quot; class=&quot;headerlink&quot; title=&quot;Basic ideas&quot;&gt;&lt;/a&gt;Basic ideas&lt;/h2&gt;&lt;p&gt;A boring problem finding some regu
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="http://yanzhen.me/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>005-Longest-Palindromic-Substring</title>

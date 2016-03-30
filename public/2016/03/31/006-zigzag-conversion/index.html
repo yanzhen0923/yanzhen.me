@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The to">
+<meta name="description" content="Basic ideasA boring problem finding some regulations. The step length is $2numRows - 2$. The characters in the first row and the last row jumps regularly by the step length. For the rest rows, the ind">
 <meta property="og:type" content="article">
-<meta property="og:title" content="001-Two-Sum">
-<meta property="og:url" content="http://yanzhen.me/2016/03/29/001-two-sum/index.html">
+<meta property="og:title" content="006-ZigZag-Conversion">
+<meta property="og:url" content="http://yanzhen.me/2016/03/31/006-zigzag-conversion/index.html">
 <meta property="og:site_name" content="YZ">
-<meta property="og:description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The to">
-<meta property="og:updated_time" content="2016-03-30T12:56:28.622Z">
+<meta property="og:description" content="Basic ideasA boring problem finding some regulations. The step length is $2numRows - 2$. The characters in the first row and the last row jumps regularly by the step length. For the rest rows, the ind">
+<meta property="og:updated_time" content="2016-03-30T16:12:49.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="001-Two-Sum">
-<meta name="twitter:description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The to">
+<meta name="twitter:title" content="006-ZigZag-Conversion">
+<meta name="twitter:description" content="Basic ideasA boring problem finding some regulations. The step length is $2numRows - 2$. The characters in the first row and the last row jumps regularly by the step length. For the rest rows, the ind">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> 001-Two-Sum | YZ </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 006-ZigZag-Conversion | YZ </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -223,7 +223,7 @@
             
             
               
-                001-Two-Sum
+                006-ZigZag-Conversion
               
             
           </h1>
@@ -235,8 +235,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-29T04:06:04+08:00" content="2016-03-29">
-              2016-03-29
+            <time itemprop="dateCreated" datetime="2016-03-31T00:02:19+08:00" content="2016-03-31">
+              2016-03-31
             </time>
           </span>
 
@@ -262,8 +262,8 @@
       
 
       
-        <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><p>Traverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The total complexity is $O(Nlog(N))$.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        </span><br><span class="line">        Map&lt;Integer, Integer&gt; m = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++ i)&#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = target - nums[i];</span><br><span class="line">            <span class="keyword">if</span>(m.containsKey(tmp))&#123;</span><br><span class="line">                <span class="keyword">int</span> res = m.get(tmp);</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, res&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                m.put(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><p>A boring problem finding some regulations. The step length is $2numRows - 2$. The characters in the first row and the last row jumps regularly by the step length. For the rest rows, the index jumps by 2 different steps, $step1 = 2(numRows - i - 1)$ and $step2 = step - step1$ respectively. Set a flag to switch to the other length of step in the next jump.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">convert</span><span class="params">(String s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(s.length() == <span class="number">1</span> || numRows == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">        StringBuilder str = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">int</span> step = (numRows &lt;&lt; <span class="number">1</span>) - <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//first row</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i += step)&#123;</span><br><span class="line">            str.append(s.charAt(i));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//middle rows</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numRows - <span class="number">1</span>; ++ i)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> j = i; <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">int</span> step1 = (numRows - i - <span class="number">1</span>) &lt;&lt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> step2 = step - step1;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (j &lt; s.length())&#123;</span><br><span class="line">                str.append(s.charAt(j));</span><br><span class="line">                <span class="keyword">if</span>(flag)</span><br><span class="line">                    j += step1;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    j += step2;</span><br><span class="line">                flag ^= <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//last row</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = numRows - <span class="number">1</span>; i &lt; s.length(); i += step)&#123;</span><br><span class="line">            str.append(s.charAt(i));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> str.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -287,17 +287,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/07/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/03/30/005-longest-palindromic-substring/" rel="next" title="005-Longest-Palindromic-Substring">
+                <i class="fa fa-chevron-left"></i> 005-Longest-Palindromic-Substring
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/29/002-add-two-numbers/" rel="prev" title="002-Add-Two-Numbers">
-                002-Add-Two-Numbers <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
