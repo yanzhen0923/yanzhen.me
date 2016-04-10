@@ -59,16 +59,19 @@
 
 
 
-<meta name="description" content="Basic ideasUsing a classical dynamic-programming style, with a time complexity of $O(N^2)$ and space complexity of $O(N^2)$. A table is introduced to store the palidromic information. If $table[i][j]$">
+<meta name="description" content="Basic ideasFind the first none-space character, check validation and the sign, then convert one by one. Once an invalid char or a number that is larger than Integer.MAX comes, return.
+Solutionpublic c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="005-Longest-Palindromic-Substring">
-<meta property="og:url" content="http://yanzhen.me/2016/03/30/005-longest-palindromic-substring/index.html">
+<meta property="og:title" content="008-String-to-Integer-atoi">
+<meta property="og:url" content="http://yanzhen.me/2016/04/10/008-string-to-integer-atoi/index.html">
 <meta property="og:site_name" content="YZ">
-<meta property="og:description" content="Basic ideasUsing a classical dynamic-programming style, with a time complexity of $O(N^2)$ and space complexity of $O(N^2)$. A table is introduced to store the palidromic information. If $table[i][j]$">
-<meta property="og:updated_time" content="2016-03-30T13:48:02.610Z">
+<meta property="og:description" content="Basic ideasFind the first none-space character, check validation and the sign, then convert one by one. Once an invalid char or a number that is larger than Integer.MAX comes, return.
+Solutionpublic c">
+<meta property="og:updated_time" content="2016-04-10T18:42:06.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="005-Longest-Palindromic-Substring">
-<meta name="twitter:description" content="Basic ideasUsing a classical dynamic-programming style, with a time complexity of $O(N^2)$ and space complexity of $O(N^2)$. A table is introduced to store the palidromic information. If $table[i][j]$">
+<meta name="twitter:title" content="008-String-to-Integer-atoi">
+<meta name="twitter:description" content="Basic ideasFind the first none-space character, check validation and the sign, then convert one by one. Once an invalid char or a number that is larger than Integer.MAX comes, return.
+Solutionpublic c">
 
 
 
@@ -86,7 +89,7 @@
   };
 </script>
 
-  <title> 005-Longest-Palindromic-Substring | YZ </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 008-String-to-Integer-atoi | YZ </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -223,7 +226,7 @@
             
             
               
-                005-Longest-Palindromic-Substring
+                008-String-to-Integer-atoi
               
             
           </h1>
@@ -235,8 +238,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-30T21:11:22+02:00" content="2016-03-30">
-              2016-03-30
+            <time itemprop="dateCreated" datetime="2016-04-10T20:37:44+02:00" content="2016-04-10">
+              2016-04-10
             </time>
           </span>
 
@@ -262,9 +265,8 @@
       
 
       
-        <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><p>Using a classical dynamic-programming style, with a time complexity of $O(N^2)$ and space complexity of $O(N^2)$. A table is introduced to store the palidromic information. If $table[i][j]$ is true, it means the string from $s[i]$ to $s[j]$ is palindromic. Initially, $table[i][i]$ is set to true, as well as $table[i - 1][i]$ if $s[i - 1] == s[i]$. The transition model is, $table[i][j]$ is true if $table[i + 1][j - 1] == true$ and $s[i] == s[j]$. The model is the key point of DP. Upon the loop, the first level is the temporary length that grows from $2$ to $s.length()$. The second level is to keep a window and moves from the begnning to $s.length() - tempLen$, judging if the string inside the window is a valid string. The window’s size subjects to the temporary length. </p>
-<h2 id="NB"><a href="#NB" class="headerlink" title="NB"></a>NB</h2><p>If loop from $0$ to $s.length()$ and assume each character(s) as the center of the palindromic string, then expand the string according to the center, the space complexity could be $O(1)$.<br>Manacher’s algorithm could solve it in a linear time, but is not super easy to implement. </p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//edge test</span></span><br><span class="line">        <span class="keyword">if</span>(s.length() &lt;= <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> DUMMY = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> len = s.length(); <span class="keyword">int</span> maxLen = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">int</span> iMark = DUMMY; <span class="keyword">int</span> jMark = DUMMY;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//transition table</span></span><br><span class="line">        <span class="keyword">boolean</span>[][] table = <span class="keyword">new</span> <span class="keyword">boolean</span>[len][len];</span><br><span class="line"></span><br><span class="line">        <span class="comment">//initialization</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; ++ i)&#123;</span><br><span class="line">            table[i][i] = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; ++ i)&#123;</span><br><span class="line">             <span class="keyword">if</span>(s.charAt(i) == s.charAt(i - <span class="number">1</span>))&#123;</span><br><span class="line">                 table[i - <span class="number">1</span>][i] = <span class="keyword">true</span>;</span><br><span class="line">                 maxLen = <span class="number">2</span></span><br><span class="line">                 iMark = i - <span class="number">1</span>; jMark = i;</span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//state transition</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> tempLen = <span class="number">2</span>; tempLen &lt;= len; ++ tempLen)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len - tempLen; ++ i)&#123;</span><br><span class="line">                <span class="keyword">int</span> j = i + tempLen;</span><br><span class="line">                <span class="keyword">if</span>((table[i + <span class="number">1</span>][j - <span class="number">1</span>]) &amp;&amp; (s.charAt(i) == s.charAt(j)))&#123;</span><br><span class="line">                    table[i][j] = <span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">if</span>(( j - i + <span class="number">1</span>) &gt; maxLen) &#123;</span><br><span class="line">                        maxLen = j - i + <span class="number">1</span>;</span><br><span class="line">                        iMark = i; jMark = j;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substring(iMark, jMark + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><p>Find the first none-space character, check validation and the sign, then convert one by one. Once an invalid char or a number that is larger than Integer.MAX comes, return.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sz = str.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(sz == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//find the first none-space char</span></span><br><span class="line">        <span class="keyword">int</span> start_index;</span><br><span class="line">        <span class="keyword">for</span>(start_index = <span class="number">0</span>; start_index &lt; sz; ++ start_index)&#123;</span><br><span class="line">            <span class="keyword">if</span>(str.charAt(start_index) != <span class="string">' '</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">long</span> ret = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//if the first char is not valid then return</span></span><br><span class="line">        <span class="keyword">char</span> tmp = str.charAt(start_index);</span><br><span class="line">        <span class="keyword">if</span>(!(Character.isDigit(tmp) || tmp == <span class="string">'-'</span> || tmp == <span class="string">'+'</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//if the first valid char means a negative number</span></span><br><span class="line">        <span class="keyword">boolean</span> sign_flag = (str.charAt(start_index) == <span class="string">'-'</span>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">boolean</span> pos_flag = Character.isDigit(str.charAt(start_index)) ? <span class="keyword">false</span> : <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = pos_flag ? start_index + <span class="number">1</span> : start_index; i &lt; sz; ++ i)&#123;</span><br><span class="line">            <span class="comment">//if a invalid char comes, return the previous result</span></span><br><span class="line">            <span class="keyword">if</span>(!(Character.isDigit(str.charAt(i))))&#123;</span><br><span class="line">                <span class="keyword">return</span> sign_flag ? -(<span class="keyword">int</span>)ret : (<span class="keyword">int</span>)ret;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//if the result is larger than Integer.MAX</span></span><br><span class="line">            <span class="keyword">if</span>((ret * <span class="number">10</span> + (Character.getNumericValue(str.charAt(i)))) &gt; Integer.MAX_VALUE)</span><br><span class="line">                <span class="keyword">return</span> sign_flag ? Integer.MIN_VALUE : Integer.MAX_VALUE;</span><br><span class="line">            ret = ret * <span class="number">10</span> + Character.getNumericValue(str.charAt(i));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sign_flag ? -(<span class="keyword">int</span>)ret : (<span class="keyword">int</span>)ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -288,17 +290,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/29/004-median-of-two-sorted-arrays/" rel="next" title="004-Median-of-Two-Sorted-Arrays">
-                <i class="fa fa-chevron-left"></i> 004-Median-of-Two-Sorted-Arrays
+              <a href="/2016/04/10/007-reverse-integer/" rel="next" title="007-Reverse-Integer">
+                <i class="fa fa-chevron-left"></i> 007-Reverse-Integer
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/31/006-zigzag-conversion/" rel="prev" title="006-ZigZag-Conversion">
-                006-ZigZag-Conversion <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -434,7 +432,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-ideas"><span class="nav-number">1.</span> <span class="nav-text">Basic ideas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NB"><span class="nav-number">2.</span> <span class="nav-text">NB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">3.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-ideas"><span class="nav-number">1.</span> <span class="nav-text">Basic ideas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
