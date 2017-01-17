@@ -1,8 +1,9 @@
 
 var stop=1;
 var cars = ["S", "T", "U", "W", "V"];
+var nomore = [];
 var lastId;
-
+var lastArray;
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -15,25 +16,30 @@ function getAWinner(){
     row = "0" + row;
   }
   if(column < 10){
-    column = "0" + column
+    column = "0" + column;
   }
-  var winner = (block + row + column);
+  var winner = [block, row, column];
   return winner;
 }
 function raffle() {
     if(stop == 0){
         setTimeout(raffle, 30);
         if(document.getElementById(lastId) != null){
-          document.getElementById(lastId).className = "gr";
+          if(document.getElementById(lastId).className != "gr rd"){
+            document.getElementById(lastId).className = "gr";
+          }
         }
         var w;
+        var wArray;
         for(;;){
-          w = getAWinner();
-          if(document.getElementById(w) != null){
+          wArray = getAWinner();
+          w = wArray[0] + wArray[1] + wArray[2];
+          if(document.getElementById(w) != null && nomore.indexOf(w) === -1){
             break;
           }
         }
         lastId = w;
+        lastArray = wArray;
         document.getElementById(w).className = "gr or";
     }
 }
@@ -48,7 +54,15 @@ $(document).ready(function () {
 
   $('#end').click(function(){
     stop = 1;
-    $("div#res").text(lastId);
+    nomore.push(lastId);
+    document.getElementById(lastId).className = "gr rd";
+  //  $("div#block").text("Block\xa0\xa0\xa0\xa0\xa0" + lastArray[0]);
+    $("span#block_left").text("Block");
+    $("span#block_right").text(lastArray[0]);
+    $("span#row_left").text("Reihe");
+    $("span#row_right").text(lastArray[1]);
+    $("span#column_left").text("Sitz");
+    $("span#column_right").text(lastArray[2]);
   });
 
 });

@@ -18,6 +18,9 @@ li{
   font-size: 14px;
   float: right;
 }
+.rd{
+  background-color: red;
+}
 
 .dg{
   background-color: #666666;
@@ -45,13 +48,33 @@ li{
 
 .right_text{
   width: 254px;
-  height: 50px;
-  line-height: 50px;
+  height: 90px;
+  line-height: 90px;
   text-align: center;
   font-size: 24px;
 }
+.single_line{
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  padding-left: 70px;
+}
+.single_line_left{
+  width: 127px;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  padding-left: 35px;
+  float: left;
+}
+.single_line_right{
+  text-align: right;
+  padding-right: : 35px;
+  float: right;
+}
+
 .top_big_margin{
-  margin-top: 120px;
+  margin-top: 80px;
 }
 .top_small_margin{
   margin-top: 30px;
@@ -61,6 +84,26 @@ li{
 }
 .yellow{
   background-color: yellow;
+}
+.blue{
+  background-color: blue;
+}
+.pink{
+  background-color: pink;
+}
+
+span{
+  width: 127px;
+  text-align: left;
+}
+#block_right{
+  padding-left: 28px;
+}
+#row_right{
+  padding-left: 14px;
+}
+#column_right{
+  padding-left: 44px;
 }
 
 
