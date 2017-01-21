@@ -23,7 +23,7 @@ function getAWinner(){
 }
 function raffle() {
     if(stop == 0){
-        setTimeout(raffle, 30);
+        setTimeout(raffle, 20);
         if(document.getElementById(lastId) != null){
           if(document.getElementById(lastId).className != "gr rd"){
             document.getElementById(lastId).className = "gr";

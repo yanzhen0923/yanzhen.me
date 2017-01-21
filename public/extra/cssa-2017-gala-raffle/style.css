@@ -10,7 +10,7 @@ li{
   width: 21px;
   height: 21px;
   line-height: 22px;
-  background-color: #cccccc;
+  background-color: #dddddd;
   border-radius: 3px;
   margin: 2px;
   text-align: center;
@@ -34,7 +34,7 @@ li{
   margin: 0 auto;
 }
 .text{
-  background-color: #ffffff;
+  background-color: rgba(255,255,255,0.0);
   box-shadow: none;
 }
 .dummy{
@@ -48,6 +48,7 @@ li{
 
 .right_text{
   width: 254px;
+  max-height: 90px;
   height: 90px;
   line-height: 90px;
   text-align: center;
@@ -97,40 +98,52 @@ span{
   text-align: left;
 }
 #block_right{
-  padding-left: 28px;
+  width: 127px;
+  text-align: right;
+  display: block;
 }
 #row_right{
-  padding-left: 14px;
+  width: 127px;
+  text-align: right;
+  display: block;
 }
 #column_right{
-  padding-left: 44px;
+  width: 127px;
+  text-align: right;
+  display: block;
 }
 
 
 .container{
   margin: 0px;
-  height: 1000px;
+  height: 700px;
   width: 1266px;
+  background-image: url('bg8.png');
+  background-repeat:no-repeat;
+  background-position: center center;
 }
 .title{
   width: 1600px;
-  height: 1px;
+  height: 0px;
 }
 .left{
   float: left;
   width: 330px;
-  height: 900px;
+  height: 600px;
 }
 .middle{
   float: left;
   width: 680px;
-  height: 900px;
+  height: 600px;
 }
 .right{
   float: left;
   max-width: 1800px;
-  height: 900px;
+  height: 600px;
 }
 .firstline{
   display: inline-block;
+}
+.t-row{
+  height: 30px;
 }
