@@ -81,7 +81,9 @@ li{
   margin-top: 30px;
 }
 .big_font_size{
-  font-size: 24px;
+  font-size: 20px;
+  width: 60px;
+  height: 40px;
 }
 .yellow{
   background-color: yellow;
@@ -139,6 +141,7 @@ span{
 .right{
   float: left;
   max-width: 1800px;
+  min-width: 256px;
   height: 600px;
 }
 .firstline{
@@ -146,4 +149,45 @@ span{
 }
 .t-row{
   height: 30px;
+}
+.t_left{
+  text-align: left;
+}
+.t_right{
+  text-align: right;
+}
+#res{
+  height: 90px;
+}
+#block_left{
+  text-align: left;
+  padding-left: 28px;
+}
+#block_right{
+  text-align: right;
+  padding-right: 28px
+}
+#row_left{
+  text-align: left;
+  padding-left: 28px;
+}
+#row_right{
+  text-align: right;
+  padding-right: 28px
+}
+#column_left{
+  text-align: left;
+  padding-left: 28px;
+}
+#column_right{
+  text-align: right;
+  padding-right: 28px
+}
+.mid{
+  padding-top: 120px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.padding0{
+  padding-top: 20px;
 }
