@@ -6,10 +6,23 @@ ul{
 li{
   float: left;
 }
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
 .gr{
   width: 21px;
   height: 21px;
-  line-height: 22px;
+  line-height: 20px;
   background-color: #dddddd;
   border-radius: 3px;
   margin: 2px;
@@ -119,10 +132,10 @@ span{
 .container{
   margin: 0px;
   height: 700px;
-  width: 1266px;
-  background-image: url('bg8.png');
+  width: 1350px;
+  background-image: url('bg10.png');
+  background-size: 1350px 700px;
   background-repeat:no-repeat;
-  background-position: center center;
 }
 .title{
   width: 1600px;
@@ -130,19 +143,19 @@ span{
 }
 .left{
   float: left;
-  width: 330px;
-  height: 600px;
+  width: 360px;
+  height: 700px;
 }
 .middle{
   float: left;
-  width: 680px;
-  height: 600px;
+  width: 710px;
+  height: 700px;
 }
 .right{
   float: left;
   max-width: 1800px;
-  min-width: 256px;
-  height: 600px;
+  min-width: 278px;
+  height: 700px;
 }
 .firstline{
   display: inline-block;
