@@ -222,6 +222,98 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/14/4b0aa8c5e4f51027706ac2c49959ee0f91a1e29a/" itemprop="url">
+                  4b0aa8c5e4f51027706ac2c49959ee0f91a1e29
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-03-14T11:56:34+01:00" content="2017-03-14">
+              2017-03-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="原理介绍"><a href="#原理介绍" class="headerlink" title="原理介绍"></a>原理介绍</h1><p>  分类器是在机器学期领域中对数据进行统计、分类及预测的一类重要方法，各种不同的分类器被广泛应用于工业界及各类数据挖掘的比赛中。目前已知的分类器方法有一大类主要基于集成学习，基于这个思想目前已知的有引导聚集算法或装袋法(Bagging)、自适应增强算法(Adaboost)、多重增强算法(Multiboost)、梯度增强算法(Gradient Boosting)和极限梯度增强算法(XGBoost)。本文将先介绍引导聚集算法和自适应增强算法作为引入，再重点介绍本文所使用的极限梯度增强算法。</p>
+<h2 id="集成学习方法概述"><a href="#集成学习方法概述" class="headerlink" title="集成学习方法概述"></a>集成学习方法概述</h2><p>对于一个分类器来说，如果其模型结构较为复杂，则其很容易适应当前数据，即对于当前数据拟合有很好的效果，误差较小，但是这样很容易造成对数据的过度拟合(Overfitting)，不利于对于未知的数据进行预测。反之，如果一个模型结构较为简单，则虽然不至于对训练数据过度拟合，但有可能在训练集中产生较大的误差，这同样不利于分类器对未知的数据进行预测。集成学习方法综合了以上两个方向的有点来做机器学期，其目标是在模型的复杂度和数据模型拟合和准确率之间做一个最优的平衡，以达到优秀的预测效果。<br>对于一个给定的数据集，集成学习方法往往先将这个数据集分割成N个数据子集，在对这N个子集中的数据分别做训练调节分类器的结构和参数，形成一个弱分类器，最后对于一个未知数据，集成学习方法用这个N子集所预测出的N的结果用事先约定好的方法做集成，做出最终预测。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/14/4b0aa8c5e4f51027706ac2c49959ee0f91a1e29a/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/10/009-palindrome-number/" itemprop="url">
                   009-Palindrome-Number
                 </a>
@@ -652,98 +744,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/29/004-median-of-two-sorted-arrays/" itemprop="url">
-                  004-Median-of-Two-Sorted-Arrays
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-29T06:10:21+02:00" content="2016-03-29">
-              2016-03-29
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><h3 id="Find-the-median"><a href="#Find-the-median" class="headerlink" title="Find the median"></a>Find the median</h3><p>This problem could be treated as a special case of find k-th smallest element in two sorted arrays. Say $m$ and $n$ are the lengths of the two arrays respectively. Then, if $m + n$ is odd, find the $ (\frac{m + n}{2} + 1)$th smallest element as the median. If $m + n$ is even, then find the $(\frac{m + n}{2})$th and the $(\frac{m + n}{2} + 1)$th smallest element, then count the average as the median.</p>
-<h3 id="Find-the-k-th-smallest-element"><a href="#Find-the-k-th-smallest-element" class="headerlink" title="Find the k-th smallest element"></a>Find the k-th smallest element</h3><p>Using a divide-and-conquer style could reach a complexity of only $O(logK)$.<br>If there are two arrays, $arr1$ and $arr2$, then compare the values of $arr1[\frac{k}{2}]$ and $arr2[\frac{k}{2}]$.<br>If $arr1[\frac{k}{2}]$ &gt; $arr2[\frac{k}{2}]$, this means all the elements in $arr2$ before $arr2[\frac{k}{2}]$ must be smaller than the k-th smallest element, so just simply discard those elements. Then, since $\frac{k}{2}$ elements are dicarded, the problem becomes find the $ k - \frac{k}{2}$ smallest number. Vice versa. Keep recursion unitl $k == 1$ or the beginning index is larger than the size of the assigned array.<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/29/004-median-of-two-sorted-arrays/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -789,7 +789,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -799,7 +799,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

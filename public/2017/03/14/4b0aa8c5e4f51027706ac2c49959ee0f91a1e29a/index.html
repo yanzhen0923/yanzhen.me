@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leetcode," />
+  <meta name="keywords" content="treeboosting," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The to">
+<meta name="description" content="原理介绍  分类器是在机器学期领域中对数据进行统计、分类及预测的一类重要方法，各种不同的分类器被广泛应用于工业界及各类数据挖掘的比赛中。目前已知的分类器方法有一大类主要基于集成学习，基于这个思想目前已知的有引导聚集算法或装袋法(Bagging)、自适应增强算法(Adaboost)、多重增强算法(Multiboost)、梯度增强算法(Gradient Boosting)和极限梯度增强算法(XGBoo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="001-Two-Sum">
-<meta property="og:url" content="http://yanzhen.me/2016/03/29/001-two-sum/index.html">
+<meta property="og:title" content="4b0aa8c5e4f51027706ac2c49959ee0f91a1e29">
+<meta property="og:url" content="http://yanzhen.me/2017/03/14/4b0aa8c5e4f51027706ac2c49959ee0f91a1e29a/index.html">
 <meta property="og:site_name" content="YZ">
-<meta property="og:description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The to">
-<meta property="og:updated_time" content="2017-01-17T09:12:42.000Z">
+<meta property="og:description" content="原理介绍  分类器是在机器学期领域中对数据进行统计、分类及预测的一类重要方法，各种不同的分类器被广泛应用于工业界及各类数据挖掘的比赛中。目前已知的分类器方法有一大类主要基于集成学习，基于这个思想目前已知的有引导聚集算法或装袋法(Bagging)、自适应增强算法(Adaboost)、多重增强算法(Multiboost)、梯度增强算法(Gradient Boosting)和极限梯度增强算法(XGBoo">
+<meta property="og:updated_time" content="2017-03-15T00:30:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="001-Two-Sum">
-<meta name="twitter:description" content="Basic ideasTraverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The to">
+<meta name="twitter:title" content="4b0aa8c5e4f51027706ac2c49959ee0f91a1e29">
+<meta name="twitter:description" content="原理介绍  分类器是在机器学期领域中对数据进行统计、分类及预测的一类重要方法，各种不同的分类器被广泛应用于工业界及各类数据挖掘的比赛中。目前已知的分类器方法有一大类主要基于集成学习，基于这个思想目前已知的有引导聚集算法或装袋法(Bagging)、自适应增强算法(Adaboost)、多重增强算法(Multiboost)、梯度增强算法(Gradient Boosting)和极限梯度增强算法(XGBoo">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> 001-Two-Sum | YZ </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 4b0aa8c5e4f51027706ac2c49959ee0f91a1e29 | YZ </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -223,7 +223,7 @@
             
             
               
-                001-Two-Sum
+                4b0aa8c5e4f51027706ac2c49959ee0f91a1e29
               
             
           </h1>
@@ -235,8 +235,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-29T04:06:04+02:00" content="2016-03-29">
-              2016-03-29
+            <time itemprop="dateCreated" datetime="2017-03-14T11:56:34+01:00" content="2017-03-14">
+              2017-03-14
             </time>
           </span>
 
@@ -262,9 +262,13 @@
       
 
       
-        <h2 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h2><p>Traverse the array and store the visited elements in a map. Once a new traversing element comes, find its missing part in the map according to the target, namely, $target - nums[i]$. The total complexity is $O(Nlog(N))$.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</div><div class="line">        </div><div class="line">        Map&lt;Integer, Integer&gt; m = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++ i)&#123;</div><div class="line">            <span class="keyword">int</span> tmp = target - nums[i];</div><div class="line">            <span class="keyword">if</span>(m.containsKey(tmp))&#123;</div><div class="line">                <span class="keyword">int</span> res = m.get(tmp);</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, res&#125;;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                m.put(nums[i], i);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+        <h1 id="原理介绍"><a href="#原理介绍" class="headerlink" title="原理介绍"></a>原理介绍</h1><p>  分类器是在机器学期领域中对数据进行统计、分类及预测的一类重要方法，各种不同的分类器被广泛应用于工业界及各类数据挖掘的比赛中。目前已知的分类器方法有一大类主要基于集成学习，基于这个思想目前已知的有引导聚集算法或装袋法(Bagging)、自适应增强算法(Adaboost)、多重增强算法(Multiboost)、梯度增强算法(Gradient Boosting)和极限梯度增强算法(XGBoost)。本文将先介绍引导聚集算法和自适应增强算法作为引入，再重点介绍本文所使用的极限梯度增强算法。</p>
+<h2 id="集成学习方法概述"><a href="#集成学习方法概述" class="headerlink" title="集成学习方法概述"></a>集成学习方法概述</h2><p>对于一个分类器来说，如果其模型结构较为复杂，则其很容易适应当前数据，即对于当前数据拟合有很好的效果，误差较小，但是这样很容易造成对数据的过度拟合(Overfitting)，不利于对于未知的数据进行预测。反之，如果一个模型结构较为简单，则虽然不至于对训练数据过度拟合，但有可能在训练集中产生较大的误差，这同样不利于分类器对未知的数据进行预测。集成学习方法综合了以上两个方向的有点来做机器学期，其目标是在模型的复杂度和数据模型拟合和准确率之间做一个最优的平衡，以达到优秀的预测效果。<br>对于一个给定的数据集，集成学习方法往往先将这个数据集分割成N个数据子集，在对这N个子集中的数据分别做训练调节分类器的结构和参数，形成一个弱分类器，最后对于一个未知数据，集成学习方法用这个N子集所预测出的N的结果用事先约定好的方法做集成，做出最终预测。<br><a id="more"></a></p>
+<h3 id="自引导抽样法"><a href="#自引导抽样法" class="headerlink" title="自引导抽样法"></a>自引导抽样法</h3><p>这类方法是对于一个给定的数据集S, 生成N个数据子集的一类经典方法。自引导抽样法是一个有放回的抽样法，在假定每个元素都处于连续均匀分布情况下对每个元素进行等概率抽样，抽完样后将元素放回。例如，对于一个给定的数据集$D=\{(x_1,y_1),(x_2,y_2),…,(x_m,y_m)\}$，其中$x_i\in{R^{d}}, y_i\in{R}, |D|=m$， 数据集中有m个元素，在经过k次、每次抽取n的元素的抽样后，对于第i个数据集。对于某个数据子集，由于它是由有放回抽样的方法获取的，所以数据子集中的元素可能重复，但是数据子集中的每一个元素都属于原来给定的数据集$D$。<br>在这个有m的元素的数据集D中，每个元素每次被抽中的概率为$1\over m$, 那么每个元素不被抽中的概率就是$1-{1\over m}$, 所以在经过足够多次的抽样后，每个元素仍不被选进用于训练的数据子集的概率为$\lim{m\to \infty}{(1-{1\over m})}^{m} = {1\over e} \approx 0.368$。换言之，利用自引导抽样法可以将约$63.2\%$的原始数据作为训练集，而将其余的作为测试集。<br>自引导抽样法是生成训练数据的一种方法，本文其余部分生成数据子集的方法包括但不限于此方法。</p>
+<h3 id="引导聚集算法"><a href="#引导聚集算法" class="headerlink" title="引导聚集算法"></a>引导聚集算法</h3><p>引导聚集算法是一个相对基本的增强学习方法，其基本原理是先利用自引导抽样法生成N个数据子集，再对每个数据子集分别训练分类器，当有需要预测的数据时，算法会让事先训练好的N个数据子集对应的N个分类器分别做预测，最后通过类似投票的方式产生最终结果。当对于某个特定的数据子集进行训练时，可以采用类似于L2范式的标准设计目标函数，测量训练目标与设计目标的欧几里得距离，目标函数的值越小说明训练效果越好。例如，对于第$i$个数据子集而言，其目标函数可以设计成$\sum_{i}^{n}{1\over 2}{(y_i-\hat{y_i})}^2$。对于预测结果，可以让所有的弱分类器对结果进行等权重投票，得票最高的数据即为最终结果。</p>
+<h3 id="自适应增强算法"><a href="#自适应增强算法" class="headerlink" title="自适应增强算法"></a>自适应增强算法</h3><p>自适应增强算法是基于引导聚集算法的改进，它的工作原理是对于不同的元素根据分类或预测错误率设定抽样是的权重。例如在对第i个数据子集的预测完成后，算法会对第i次的预测进行评估，并筛选出预测结果有有误的部分，根据误差情况在将样本放回时适当地增加这些被错误预测的样本的抽样概率，这样在对第i+1次数据子集进行训练时，在第i轮被错误预测的数据会被重点训练，以此增强训练效果。例如，在第i轮训练时，第2、3、5号样本被错误预测，则本轮训练结束后在将样本放回时会增加2、3、5号样本被抽中的概率。在第i+1轮训练时，第2、3、5号样本就有很大的概率成为第i+1轮数据子集中的元素，这样第i+1轮训练出类来的分类器会适当地提高对第2、3、5号样本预测的精确度，而在第i+1轮训练结束后被错误预测的样本又会有很大的概率出现在下一轮的数据子集中。</p>
+<h2 id="极限增强算法"><a href="#极限增强算法" class="headerlink" title="极限增强算法"></a>极限增强算法</h2><h3 id="核心算法"><a href="#核心算法" class="headerlink" title="核心算法"></a>核心算法</h3><p>这个算法是由</p>
+<h3 id="其他改进设计"><a href="#其他改进设计" class="headerlink" title="其他改进设计"></a>其他改进设计</h3>
       
     </div>
 
@@ -278,7 +282,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
+            <a href="/tags/treeboosting/" rel="tag">#treeboosting</a>
           
         </div>
       
@@ -287,17 +291,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/07/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/04/10/009-palindrome-number/" rel="next" title="009-Palindrome-Number">
+                <i class="fa fa-chevron-left"></i> 009-Palindrome-Number
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/29/002-add-two-numbers/" rel="prev" title="002-Add-Two-Numbers">
-                002-Add-Two-Numbers <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -433,7 +433,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-ideas"><span class="nav-number">1.</span> <span class="nav-text">Basic ideas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原理介绍"><span class="nav-number">1.</span> <span class="nav-text">原理介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集成学习方法概述"><span class="nav-number">1.1.</span> <span class="nav-text">集成学习方法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自引导抽样法"><span class="nav-number">1.1.1.</span> <span class="nav-text">自引导抽样法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引导聚集算法"><span class="nav-number">1.1.2.</span> <span class="nav-text">引导聚集算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自适应增强算法"><span class="nav-number">1.1.3.</span> <span class="nav-text">自适应增强算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#极限增强算法"><span class="nav-number">1.2.</span> <span class="nav-text">极限增强算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#核心算法"><span class="nav-number">1.2.1.</span> <span class="nav-text">核心算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他改进设计"><span class="nav-number">1.2.2.</span> <span class="nav-text">其他改进设计</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
