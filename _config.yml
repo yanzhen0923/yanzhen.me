@@ -73,6 +73,8 @@ deploy:
   repo: https://github.com/yanzhen0923/yanzhen0923.github.io.git
   branch: master
 
+math:
+  engine: 'katex'
 
 #baidu_analytics: 64f7c921f0f39633362e8f89dd753398
 
